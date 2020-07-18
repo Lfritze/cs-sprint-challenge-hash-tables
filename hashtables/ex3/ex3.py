@@ -1,11 +1,19 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    count_int = {}
+    for arr in arrays:
+        for x in arr:
+            if x not in count_int:
+                count_int[x] = 0
+            
+            count_int[x] += 1
+
+    result = []
+
+    for key,value in count_int.items():
+        if value == len(arrays):
+            result.append(key)
 
     return result
-
 
 if __name__ == "__main__":
     arrays = []
